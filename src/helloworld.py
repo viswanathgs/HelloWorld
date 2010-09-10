@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python -tt
 #
 # main.py
 # Copyright (C) Viswanath S 2010 <viswanathgs@gmail.com>
@@ -21,7 +21,7 @@ import gtk
 
 class HelloWorldEditor:
 	
-	def on_mainwindow_destory(self, widget, data=None):
+	def on_mainwindow_destroy(self, widget, data=None):
 		gtk.main_quit()
 	
 	def __init__(self):
