@@ -16,5 +16,24 @@
 # You should have received a copy of the GNU General Public License along
 # with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import sys
+import gtk
 
-print "Hello World!"
+class HelloWorldEditor:
+	
+	def on_mainwindow_destory(self, widget, data=None):
+		gtk.main_quit()
+	
+	def __init__(self):
+		builder = gtk.Builder()
+		builder.add_from_file("homedialog.xml")
+		
+		self.window = builder.get_object("mainwindow")
+		builder.connect_signals(self)
+
+
+if __name__ == '__main__':
+	editor = HelloWorldEditor()
+	editor.window.show()
+	gtk.main()
+	
